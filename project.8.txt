@@ -1,0 +1,92 @@
+﻿Q.1 Write a Program to find the length of a string using a Pointer.
+For example,
+Input:
+Enter any string: hello world
+
+
+Output:
+The length of a string is: 11
+Ans: 
+
+
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[100];
+    printf("Enter any string: ");
+    // scanf("%s", str);
+    gets(str);
+    int len = strlen(str);
+    int *a=&len;
+    printf("The length of a string is: %d.\n", *a);
+    return 0;
+}
+O\p: Enter any string: hello world
+The length of a string is: 11.
+
+
+
+
+=== Code Execution Successful ===
+Q.2 Write a Program to find cubes of all elements from a given 2D array using Pointer with UDF.
+For example,
+Input:
+Enter array's size: 2
+
+
+Enter array elements:
+a[0][0] = 3
+a[0][1] = 2
+a[1][0] = 5
+a[1][1] = 4
+
+
+Output:
+Cubes of all elements:
+9   4
+25 64
+Ans: #include <stdio.h>
+
+
+int number(int *k) {
+    return (*k) * (*k) * (*k);
+}
+
+
+int main() {
+    int r, c;
+    printf("Enter array's size: ");
+    scanf("%d", &r);
+    c = r;
+    int p[r][c];
+    printf("Enter array elements:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("a[%d][%d] = ", i, j);
+            scanf("%d", &p[i][j]);
+        }
+    }
+    printf("Cubes of all elements:\n");
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            printf("%d,", number(&p[i][j]));
+        }
+    }
+
+
+    return 0;
+}
+
+
+O\p: /tmp/APXsyhlR6q.o
+Enter array's size: 2
+Enter array elements:
+a[0][0] = 3
+a[0][1] = 2
+a[1][0] = 5
+a[1][1] = 4
+Cubes of all elements:
+27,8,125,64,
+
+
+=== Code Execution Successful ===
